@@ -1,0 +1,160 @@
+.section {
+  background: var(--light);
+}
+
+.header {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.highlight {
+  color: var(--accent-dark);
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.track {
+  flex: 1;
+  position: relative;
+  min-height: 300px;
+}
+
+.card {
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  opacity: 0;
+  transform: translateX(20px) scale(0.97);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.cardActive {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: all;
+  position: relative;
+}
+
+.quoteIcon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  opacity: 0.6;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.stars {
+  color: var(--accent);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.author strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.author span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  flex-shrink: 0;
+  box-shadow: var(--card-shadow);
+}
+
+.navBtn:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.15);
+  border: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.dotActive {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .carousel {
+    gap: 0.75rem;
+  }
+
+  .card {
+    padding: 1.75rem;
+  }
+
+  .navBtn {
+    width: 36px;
+    height: 36px;
+  }
+}
