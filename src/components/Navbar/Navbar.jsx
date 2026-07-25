@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { FaBars, FaTimes, FaGraduationCap, FaPhoneAlt } from 'react-icons/fa'
 import styles from './Navbar.module.css'
 
@@ -13,12 +13,24 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const location = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', handleScroll)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60)
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Reset progress on route change
+  useEffect(() => {
+    setProgress(0)
+    setMenuOpen(false)
+  }, [location])
 
   // Close menu on route change or outside click
   useEffect(() => {
@@ -45,6 +57,8 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+        {/* Scroll Progress Bar */}
+        <div className={styles.progressBar} style={{ width: `${progress}%` }} />
         <div className="container">
           <div className={styles.navInner}>
             {/* Logo */}
