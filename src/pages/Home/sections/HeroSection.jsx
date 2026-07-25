@@ -103,14 +103,18 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right — Visual card */}
+        {/* Right — Real School Photo */}
         <div className={styles.visualCol}>
           <div className={styles.visualCard}>
             <div className={styles.schoolImg}>
-              <div className={styles.imgPlaceholder}>
-                <FaGraduationCap className={styles.bigIcon} />
-                <span>Excellence International School</span>
-                <span className={styles.imgSub}>Aligarh, Uttar Pradesh</span>
+              <img
+                src="https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-1.png"
+                alt="Excellence International School Aligarh"
+                className={styles.realSchoolImg}
+              />
+              <div className={styles.imgBadgeRow}>
+                <span className={styles.imgBadge}>CBSE Affiliated</span>
+                <span className={styles.imgBadge}>Est. 2005</span>
               </div>
             </div>
             {/* Floating achievement cards */}

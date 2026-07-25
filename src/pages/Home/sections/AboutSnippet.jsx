@@ -26,24 +26,24 @@ export default function AboutSnippet() {
     <section className={`section ${styles.about}`} ref={sectionRef} id="about-snippet">
       <div className="container">
         <div className={styles.grid}>
-          {/* Left - Image mosaic */}
+          {/* Left - Real School Photo Grid */}
           <div className={`reveal-left ${styles.imageCol}`}>
             <div className={styles.mosaic}>
               <div className={`${styles.mosaicCard} ${styles.mc1}`}>
-                <span>🏫</span>
-                <p>Modern Campus</p>
+                <img src="https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Vision-Mission.png" alt="School Vision" className={styles.mosaicImg} />
+                <p>Our Vision</p>
               </div>
               <div className={`${styles.mosaicCard} ${styles.mc2}`}>
-                <span>📚</span>
-                <p>Smart Classrooms</p>
+                <img src="https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Pre-Primary-School.png" alt="Pre Primary School" className={styles.mosaicImg} />
+                <p>Pre-Primary</p>
               </div>
               <div className={`${styles.mosaicCard} ${styles.mc3}`}>
-                <span>⚽</span>
-                <p>Sports Ground</p>
+                <img src="https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Primary-School.png" alt="Primary School" className={styles.mosaicImg} />
+                <p>Primary School</p>
               </div>
               <div className={`${styles.mosaicCard} ${styles.mc4}`}>
-                <span>🔬</span>
-                <p>Science Labs</p>
+                <img src="https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Middle.png" alt="Middle School" className={styles.mosaicImg} />
+                <p>Middle School</p>
               </div>
               <div className={styles.yearBadge}>
                 <strong>20+</strong>
