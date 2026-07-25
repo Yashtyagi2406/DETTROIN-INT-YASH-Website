@@ -160,11 +160,11 @@
 .cardOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 50%);
-  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: var(--transition);
 }
@@ -173,43 +173,18 @@
   opacity: 1;
 }
 
-.catBadge {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(8px);
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
 .expandIcon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   color: white;
-  font-size: 0.9rem;
-  opacity: 0.7;
+  font-size: 1.8rem;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.8rem;
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
 
-.cardOverlay h3 {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 0.25rem;
-}
-
-.cardOverlay p {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.4;
+.card:hover .expandIcon {
+  transform: scale(1.15);
 }
 
 .noItems {
