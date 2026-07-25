@@ -1,11 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FaClipboardList, FaFileAlt, FaCheckCircle, FaPaperPlane } from 'react-icons/fa'
 import styles from './Admissions.module.css'
 
 export default function Admissions() {
   const location = useLocation()
-  const isEnquiry = location.pathname.includes('enquiry')
+
+  useEffect(() => {
+    if (location.pathname.includes('enquiry')) {
+      const el = document.getElementById('enquiry-form')
+      el?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [location.pathname])
 
   const [formData, setFormData] = useState({
     parentName: '',
