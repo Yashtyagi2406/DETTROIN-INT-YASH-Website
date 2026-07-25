@@ -150,6 +150,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .cardImg {
+  transform: scale(1.04);
 }
 
 .noItems {
