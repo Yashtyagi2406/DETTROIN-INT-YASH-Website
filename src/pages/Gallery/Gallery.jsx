@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaTimes, FaChevronLeft, FaChevronRight, FaExpand } from 'react-icons/fa'
+import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import styles from './Gallery.module.css'
 
 const BASE_IMG = 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03'
@@ -99,9 +99,6 @@ export default function Gallery() {
                   className={styles.cardImg}
                   loading="lazy"
                 />
-                <div className={styles.cardOverlay}>
-                  <FaExpand className={styles.expandIcon} />
-                </div>
               </div>
             ))}
           </div>
