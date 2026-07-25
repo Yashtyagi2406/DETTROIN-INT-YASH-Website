@@ -78,30 +78,40 @@ export default function About() {
         </div>
       </section>
 
-      {/* Principal's Message */}
+      {/* Official Vision & Mission Section from Original Website */}
       <section className={`section ${styles.principalSection}`}>
         <div className="container">
           <div className={styles.principalGrid}>
             <div className={`reveal-left ${styles.principalCard}`}>
-              <div className={styles.principalAvatar}>RP</div>
-              <div className={styles.principalBadge}>🏆 Distinguished Educator Award 2023</div>
+              <img
+                src="https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Vision-Mission.png"
+                alt="Excellence International School Vision & Mission"
+                className={styles.visionMissionImg}
+              />
             </div>
             <div className={`reveal-right ${styles.principalText}`}>
-              <span className="section-label">From the Principal's Desk</span>
-              <h2 className="heading-lg">A Message from<br /><span className={styles.highlight}>Dr. Rajendra Prasad</span></h2>
-              <p>
-                "Welcome to Excellence International School — a place where we celebrate the uniqueness of every child. Our school is more than classrooms and textbooks; it is a vibrant community of learners, explorers, and dreamers.
-              </p>
-              <p>
-                Over the past twenty years, we have watched thousands of students walk through our gates as curious young minds and leave as confident, compassionate, and capable individuals ready to make their mark on the world.
-              </p>
-              <p>
-                We invite you to join our family and be a part of this incredible journey of excellence."
-              </p>
-              <div className={styles.principalSig}>
-                <strong>Dr. Rajendra Prasad</strong>
-                <span>Principal, Excellence International School</span>
-                <span>M.Ed., Ph.D. — Education Leadership</span>
+              <span className="section-label">Our Core Purpose</span>
+              <h2 className="heading-lg">School <span className={styles.highlight}>Vision & Mission</span></h2>
+              
+              <div className={styles.vmBlock}>
+                <h3>🎯 Vision</h3>
+                <p>
+                  To create confident, responsible, and innovative individuals who contribute positively to society.
+                </p>
+              </div>
+
+              <div className={styles.vmBlock}>
+                <h3>🚀 Mission</h3>
+                <ul className={styles.missionList}>
+                  <li>✓ Deliver high-quality education</li>
+                  <li>✓ Encourage curiosity and creativity</li>
+                  <li>✓ Develop strong academic foundations</li>
+                  <li>✓ Promote discipline and ethical values</li>
+                  <li>✓ Prepare students for future opportunities</li>
+                </ul>
+                <p style={{ marginTop: '0.75rem', fontStyle: 'italic' }}>
+                  Every learner receives personalized attention and encouragement to achieve their goals.
+                </p>
               </div>
             </div>
           </div>
