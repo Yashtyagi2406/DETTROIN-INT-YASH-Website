@@ -11,6 +11,7 @@ import Blog from './pages/Blog/Blog'
 import Contact from './pages/Contact/Contact'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton'
+import FloatingQuickActions from './components/FloatingQuickActions/FloatingQuickActions'
 import './App.css'
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         </Routes>
       </main>
       <WhatsAppButton />
+      <FloatingQuickActions />
       <Footer />
     </Router>
   )
