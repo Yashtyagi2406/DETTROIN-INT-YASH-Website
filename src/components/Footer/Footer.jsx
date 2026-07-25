@@ -41,7 +41,11 @@ export default function Footer() {
             {/* Brand */}
             <div className={styles.brand}>
               <Link to="/" className={styles.logo}>
-                <div className={styles.logoIcon}><FaGraduationCap /></div>
+                <img
+                  src="https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Excellence-Logo.png"
+                  alt="Excellence International School Logo"
+                  className={styles.footerLogoImg}
+                />
                 <div>
                   <span className={styles.logoMain}>Excellence</span>
                   <span className={styles.logoSub}>International School</span>
