@@ -11,19 +11,19 @@ const contactInfo = [
   {
     icon: <FaMapMarkerAlt />,
     title: 'Our Address',
-    lines: ['Civil Lines, Near MG Road', 'Aligarh, Uttar Pradesh — 202001'],
+    lines: ['Ramghat Road, Aligarh', 'Uttar Pradesh — 202001'],
     color: '#0D3B2E',
   },
   {
     icon: <FaPhoneAlt />,
-    title: 'Phone Numbers',
-    lines: ['+91-571-123-4567', '+91-571-765-4321'],
+    title: 'Phone Number',
+    lines: ['+91 7055582117'],
     color: '#3b82f6',
   },
   {
     icon: <FaEnvelope />,
     title: 'Email Us',
-    lines: ['info@excellenceinternationalschool.com', 'admissions@excellenceinternationalschool.com'],
+    lines: ['info@excellenceinternationalschool.com', 'rahulexcellence85@gmail.com'],
     color: '#f59e0b',
   },
   {
@@ -241,7 +241,7 @@ export default function Contact() {
 
               {/* WhatsApp CTA */}
               <a
-                href="https://wa.me/915711234567?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Excellence%20International%20School."
+                href="https://api.whatsapp.com/send?phone=917055582117&text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Excellence%20International%20School."
                 target="_blank"
                 rel="noopener noreferrer"
                 id="contact-whatsapp-btn"
@@ -250,7 +250,7 @@ export default function Contact() {
                 <div className={styles.waIcon}><FaWhatsapp /></div>
                 <div>
                   <strong>Chat on WhatsApp</strong>
-                  <p>Get instant answers to your queries</p>
+                  <p>+91 7055582117 — Get instant answers</p>
                 </div>
                 <span className={styles.waArrow}>›</span>
               </a>
@@ -258,9 +258,9 @@ export default function Contact() {
               {/* Socials */}
               <div className={styles.socialRow}>
                 <span>Follow us:</span>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" id="contact-fb" aria-label="Facebook"><FaFacebookF /></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" id="contact-ig" aria-label="Instagram"><FaInstagram /></a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" id="contact-yt" aria-label="YouTube"><FaYoutube /></a>
+                <a href="https://www.facebook.com/share/1GvbBbZqN5/" target="_blank" rel="noopener noreferrer" id="contact-fb" aria-label="Facebook"><FaFacebookF /></a>
+                <a href="https://www.instagram.com/excellence_school_aligarh?igsh=a2NudW0zcnlqeTVu" target="_blank" rel="noopener noreferrer" id="contact-ig" aria-label="Instagram"><FaInstagram /></a>
+                <a href="https://youtube.com/@excellenceschoolinternational?si=cAvfCyy3WWmRWkg6" target="_blank" rel="noopener noreferrer" id="contact-yt" aria-label="YouTube"><FaYoutube /></a>
               </div>
             </div>
           </div>
@@ -278,8 +278,7 @@ export default function Contact() {
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className={`reveal ${styles.faqItem} ${openFaq === i ? styles.faqOpen : ''}`}
-                style={{ transitionDelay: `${i * 0.08}s` }}
+                className={`${styles.faqItem} ${openFaq === i ? styles.faqOpen : ''}`}
               >
                 <button
                   id={`faq-btn-${i}`}
@@ -300,7 +299,7 @@ export default function Contact() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/915711234567"
+        href="https://api.whatsapp.com/send?phone=917055582117"
         target="_blank"
         rel="noopener noreferrer"
         id="floating-whatsapp-btn"

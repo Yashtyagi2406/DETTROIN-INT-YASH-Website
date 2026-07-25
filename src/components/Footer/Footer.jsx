@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
   FaGraduationCap, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt,
-  FaFacebookF, FaInstagram, FaYoutube, FaTwitter,
+  FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp,
   FaHeart
 } from 'react-icons/fa'
 import styles from './Footer.module.css'
@@ -48,10 +48,10 @@ export default function Footer() {
                 Nurturing tomorrow's leaders with world-class education and holistic development since 2005.
               </p>
               <div className={styles.socials}>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" id="footer-facebook" aria-label="Facebook"><FaFacebookF /></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" id="footer-instagram" aria-label="Instagram"><FaInstagram /></a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" id="footer-youtube" aria-label="YouTube"><FaYoutube /></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" id="footer-twitter" aria-label="Twitter"><FaTwitter /></a>
+                <a href="https://www.facebook.com/share/1GvbBbZqN5/" target="_blank" rel="noopener noreferrer" id="footer-facebook" aria-label="Facebook"><FaFacebookF /></a>
+                <a href="https://www.instagram.com/excellence_school_aligarh?igsh=a2NudW0zcnlqeTVu" target="_blank" rel="noopener noreferrer" id="footer-instagram" aria-label="Instagram"><FaInstagram /></a>
+                <a href="https://youtube.com/@excellenceschoolinternational?si=cAvfCyy3WWmRWkg6" target="_blank" rel="noopener noreferrer" id="footer-youtube" aria-label="YouTube"><FaYoutube /></a>
+                <a href="https://api.whatsapp.com/send?phone=917055582117" target="_blank" rel="noopener noreferrer" id="footer-twitter" aria-label="WhatsApp"><FaWhatsapp /></a>
               </div>
             </div>
 
@@ -89,11 +89,11 @@ export default function Footer() {
               <ul className={styles.contactList}>
                 <li>
                   <FaMapMarkerAlt className={styles.contactIcon} />
-                  <span>Civil Lines, Aligarh, Uttar Pradesh — 202001</span>
+                  <span>Ramghat Road, Aligarh, Uttar Pradesh — 202001</span>
                 </li>
                 <li>
                   <FaPhoneAlt className={styles.contactIcon} />
-                  <a href="tel:+915711234567">+91-571-123-4567</a>
+                  <a href="tel:+917055582117">+91 7055582117</a>
                 </li>
                 <li>
                   <FaEnvelope className={styles.contactIcon} />
