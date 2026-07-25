@@ -46,7 +46,7 @@ export default function About() {
           </div>
           <h1 className={styles.heroTitle}>About Excellence<br />International School</h1>
           <p className={styles.heroSub}>
-            Two decades of nurturing brilliant minds, building strong characters, and 
+            Two decades of nurturing brilliant minds, building strong characters, and
             shaping the future leaders of India — one student at a time.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function About() {
             <div className={`reveal-right ${styles.principalText}`}>
               <span className="section-label">Our Core Purpose</span>
               <h2 className="heading-lg">School <span className={styles.highlight}>Vision & Mission</span></h2>
-              
+
               <div className={styles.vmBlock}>
                 <h3>🎯 Vision</h3>
                 <p>
@@ -134,23 +134,23 @@ export default function About() {
             <span className="section-label">Our Journey</span>
             <h2 className="heading-lg">Two Decades of <span className={styles.highlight}>Growth & Excellence</span></h2>
           </div>
-            <div className={styles.timeline}>
-              {timeline.map((item, i) => (
-                <div
-                  key={i}
-                  className={`reveal ${styles.timelineItem}`}
-                  style={{ transitionDelay: `${i * 0.1}s` }}
-                >
-                  <div className={styles.timelineDot} />
-                  <div className={styles.timelineContent}>
-                    <div className={styles.timelineYear}>{item.year}</div>
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                  </div>
+          <div className={styles.timeline}>
+            {timeline.map((item, i) => (
+              <div
+                key={i}
+                className={`reveal ${styles.timelineItem}`}
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div className={styles.timelineDot} />
+                <div className={styles.timelineContent}>
+                  <div className={styles.timelineYear}>{item.year}</div>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
                 </div>
-              ))}
-              <div className={styles.timelineLine} />
-            </div>
+              </div>
+            ))}
+            <div className={styles.timelineLine} />
+          </div>
         </div>
       </section>
 
