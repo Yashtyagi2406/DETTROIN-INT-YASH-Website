@@ -162,9 +162,10 @@
 .sliderContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16 / 9.5;
   overflow: hidden;
   background: #071f19;
+  border-radius: var(--radius-xl);
 }
 
 .realSchoolImg {
@@ -172,10 +173,10 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
   opacity: 0;
-  transition: opacity 0.75s ease-in-out, transform 0.75s ease;
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease;
 }
 
 .slideActive {
@@ -186,7 +187,7 @@
 
 .slideHidden {
   opacity: 0;
-  transform: scale(1.03);
+  transform: scale(1.02);
   z-index: 0;
 }
 
@@ -194,7 +195,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(7, 31, 25, 0.65);
+  background: rgba(7, 31, 25, 0.75);
   color: white;
   border: none;
   width: 38px;
@@ -205,7 +206,7 @@
   justify-content: center;
   font-size: 0.9rem;
   cursor: pointer;
-  z-index: 10;
+  z-index: 20;
   backdrop-filter: blur(4px);
   opacity: 0;
   transition: all 0.3s ease;
@@ -236,14 +237,14 @@
   right: 1rem;
   display: flex;
   gap: 0.4rem;
-  z-index: 10;
+  z-index: 20;
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   border: none;
   cursor: pointer;
   padding: 0;
@@ -262,6 +263,7 @@
   left: 1rem;
   display: flex;
   gap: 0.5rem;
+  z-index: 20;
 }
 
 .imgBadge {
@@ -285,16 +287,17 @@
 /* Floating achievement cards */
 .floatCard {
   position: absolute;
-  background: rgba(255,255,255,0.97);
+  background: rgba(255,255,255,0.98);
   border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
   animation: float 5s ease-in-out infinite;
   backdrop-filter: blur(8px);
   min-width: 170px;
+  z-index: 25;
 }
 
 .floatCard span:first-child {
@@ -317,14 +320,14 @@
 }
 
 .fc1 {
-  top: -1.5rem;
-  left: -2rem;
+  top: -1.25rem;
+  left: -1.5rem;
   animation-delay: 0s;
 }
 
 .fc2 {
-  bottom: 2rem;
-  right: -2rem;
+  bottom: -1.25rem;
+  right: -1.5rem;
   animation-delay: 1.5s;
 }
 
