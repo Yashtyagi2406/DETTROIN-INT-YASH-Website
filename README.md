@@ -146,4 +146,4 @@ npm run preview
 
 ---
 
-*Made with ❤️ by Yash Tyagi — Dettroin Web Development Internship 2025*
+*Made with ❤️ by Yash Tyagi — Dettroin Web Development Internship 2026*
