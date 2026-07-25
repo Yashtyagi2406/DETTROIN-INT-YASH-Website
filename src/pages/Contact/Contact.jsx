@@ -229,7 +229,7 @@ export default function Contact() {
               <div className={styles.mapWrapper}>
                 <iframe
                   title="Excellence International School Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56944.37!2d78.0880!3d27.8974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a5e8f2a34455%3A0x4d1a0b3d8c7a9f2e!2sAligarh%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1720000000000"
+                  src="https://maps.google.com/maps?q=Excellence+International+School+Ramghat+Road+Aligarh+Uttar+Pradesh&t=&z=16&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
