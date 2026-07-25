@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaPlay, FaArrowRight, FaGraduationCap, FaUsers, FaTrophy, FaStar, FaTimes, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaPlay, FaArrowRight, FaGraduationCap, FaUsers, FaTrophy, FaStar, FaTimes, FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import styles from './HeroSection.module.css'
 
 const stats = [
@@ -17,6 +17,15 @@ const typewriterTexts = [
   'Excellence in Education',
 ]
 
+const bannerSlides = [
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-02.jpg.jpeg', alt: 'Excellence International School Admissions Open 2026-2027' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-1.png', alt: 'Excellence International School Campus' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-4-1.png', alt: 'Holistic Education & Sports Facilities' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-002.jpg.jpeg', alt: 'Creative & Confident Learning' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-003-scaled.png', alt: 'State of the Art Facilities & Labs' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-5-1-scaled.png', alt: 'Pre-Primary to Middle School Excellence' }
+]
+
 const tourImages = [
   { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/1.jpg', title: 'Main School Campus & Entry' },
   { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Pre-Primary-School.png', title: 'Pre-Primary Play Area & Activity Classrooms' },
@@ -29,7 +38,17 @@ export default function HeroSection() {
   const typeRef = useRef(null)
   const [showTour, setShowTour] = useState(false)
   const [activeTourIndex, setActiveTourIndex] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0)
 
+  // Auto-advance banner slides every 3.5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % bannerSlides.length)
+    }, 3500)
+    return () => clearInterval(timer)
+  }, [])
+
+  // Typewriter effect
   useEffect(() => {
     let current = 0
     let charIndex = 0
@@ -66,6 +85,14 @@ export default function HeroSection() {
     timeout = setTimeout(type, 600)
     return () => clearTimeout(timeout)
   }, [])
+
+  const prevSlide = () => {
+    setCurrentSlide(prev => (prev - 1 + bannerSlides.length) % bannerSlides.length)
+  }
+
+  const nextSlide = () => {
+    setCurrentSlide(prev => (prev + 1) % bannerSlides.length)
+  }
 
   return (
     <section className={styles.hero} id="hero">
@@ -117,20 +144,47 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right — Real School Photo */}
+        {/* Right — Sliding Original Banners */}
         <div className={styles.visualCol}>
           <div className={styles.visualCard}>
             <div className={styles.schoolImg}>
-              <img
-                src="https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-1.png"
-                alt="Excellence International School Aligarh"
-                className={styles.realSchoolImg}
-              />
+              <div className={styles.sliderContainer}>
+                {bannerSlides.map((slide, idx) => (
+                  <img
+                    key={idx}
+                    src={slide.img}
+                    alt={slide.alt}
+                    className={`${styles.realSchoolImg} ${idx === currentSlide ? styles.slideActive : styles.slideHidden}`}
+                  />
+                ))}
+
+                {/* Navigation Arrows */}
+                <button className={`${styles.sliderNavBtn} ${styles.prevBtn}`} onClick={prevSlide} aria-label="Previous Slide">
+                  <FaChevronLeft />
+                </button>
+                <button className={`${styles.sliderNavBtn} ${styles.nextBtn}`} onClick={nextSlide} aria-label="Next Slide">
+                  <FaChevronRight />
+                </button>
+
+                {/* Slide Dots */}
+                <div className={styles.dotsRow}>
+                  {bannerSlides.map((_, idx) => (
+                    <button
+                      key={idx}
+                      className={`${styles.dot} ${idx === currentSlide ? styles.dotActive : ''}`}
+                      onClick={() => setCurrentSlide(idx)}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
               <div className={styles.imgBadgeRow}>
                 <span className={styles.imgBadge}>CBSE Affiliated</span>
                 <span className={styles.imgBadge}>Est. 2005</span>
               </div>
             </div>
+
             {/* Floating achievement cards */}
             <div className={`${styles.floatCard} ${styles.fc1}`}>
               <span>🏆</span>
