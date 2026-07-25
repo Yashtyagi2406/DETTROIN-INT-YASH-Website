@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaArrowRight, FaCheckCircle, FaHeart, FaLightbulb, FaStar, FaShield, FaLeaf, FaUsers } from 'react-icons/fa'
+import { FaArrowRight, FaCheckCircle, FaHeart, FaLightbulb, FaStar, FaShieldAlt, FaLeaf, FaUsers } from 'react-icons/fa'
 import styles from './About.module.css'
 
 const timeline = [
@@ -16,7 +16,7 @@ const values = [
   { icon: <FaHeart />, title: 'Integrity', desc: 'We cultivate honesty, transparency, and moral courage in all our students and staff.', color: '#ef4444' },
   { icon: <FaLightbulb />, title: 'Innovation', desc: 'We embrace technology, creativity, and modern pedagogy to make learning engaging.', color: '#f59e0b' },
   { icon: <FaStar />, title: 'Excellence', desc: 'We set high standards and support every student to reach their fullest potential.', color: '#8b5cf6' },
-  { icon: <FaShield />, title: 'Safety', desc: 'A safe, inclusive, and nurturing environment where every child belongs.', color: '#3b82f6' },
+  { icon: <FaShieldAlt />, title: 'Safety', desc: 'A safe, inclusive, and nurturing environment where every child belongs.', color: '#3b82f6' },
   { icon: <FaLeaf />, title: 'Sustainability', desc: 'We instill environmental responsibility and global citizenship in every learner.', color: '#10b981' },
   { icon: <FaUsers />, title: 'Community', desc: 'Building strong bonds between school, parents, and the wider Aligarh community.', color: '#ec4899' },
 ]

@@ -59,6 +59,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* Better mobile rendering */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 body {
