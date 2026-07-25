@@ -71,45 +71,60 @@
 /* Mission / Vision */
 .mvSection { background: var(--light); }
 
-.mvGrid {
+/* Educational Pillars Grid */
+.pillarsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
-.mvCard {
-  padding: 2.5rem 2rem;
+.pillarCard {
+  padding: 2.25rem 1.5rem;
   border-radius: var(--radius-lg);
   background: var(--white);
   box-shadow: var(--card-shadow);
   text-align: center;
   transition: var(--transition);
+  border-top: 4px solid var(--primary);
 }
 
-.mvCard:hover {
+.pillarCard:hover {
   transform: translateY(-6px);
   box-shadow: var(--card-shadow-hover);
+  border-top-color: var(--accent);
 }
 
-.mvCard h3 {
+.pillarIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.pillarCard h3 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--primary);
-  margin: 1rem 0 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
-.mvCard p {
-  font-size: 0.9rem;
+.pillarCard p {
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.8;
+  line-height: 1.7;
+  margin: 0;
 }
 
-.mvIcon { font-size: 3rem; display: block; }
+@media (max-width: 1024px) {
+  .pillarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-.mission { border-top: 4px solid var(--primary); }
-.vision { border-top: 4px solid var(--accent); }
-.philosophy { border-top: 4px solid #3b82f6; }
+@media (max-width: 640px) {
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Principal */
 .principalSection { background: var(--white); }

@@ -55,24 +55,33 @@ export default function About() {
         <div className={styles.circle2} />
       </section>
 
-      {/* Mission & Vision */}
+      {/* 4 Official Educational Pillars from Original Website */}
       <section className={`section ${styles.mvSection}`}>
         <div className="container">
-          <div className={styles.mvGrid}>
-            <div className={`reveal ${styles.mvCard} ${styles.mission}`}>
-              <span className={styles.mvIcon}>🎯</span>
-              <h3>Our Mission</h3>
-              <p>To provide an exceptional, learner-centred CBSE education that develops intellectual curiosity, moral character, physical well-being, and social responsibility in every student — empowering them to excel in a rapidly changing global world.</p>
+          <div className="text-center reveal" style={{ marginBottom: '3rem' }}>
+            <span className="section-label">Our Educational Pillars</span>
+            <h2 className="heading-lg">Why Parents Trust <span className={styles.highlight}>Excellence</span></h2>
+          </div>
+          <div className={styles.pillarsGrid}>
+            <div className={`reveal ${styles.pillarCard}`}>
+              <div className={styles.pillarIcon}>📘</div>
+              <h3>Strong Academic System</h3>
+              <p>Structured daily lessons, concept-focused teaching, regular revision sessions, periodic assessments, and doubt-clearing sessions for continuous monitoring.</p>
             </div>
-            <div className={`reveal reveal-delay-2 ${styles.mvCard} ${styles.vision}`}>
-              <span className={styles.mvIcon}>🌟</span>
-              <h3>Our Vision</h3>
-              <p>To be Aligarh's most trusted institution of learning — a place where every child is known, valued, and inspired to discover the unique gifts they carry within them, building a future that is bright for them and for society.</p>
+            <div className={`reveal reveal-delay-1 ${styles.pillarCard}`}>
+              <div className={styles.pillarIcon}>💡</div>
+              <h3>Concept-Based Learning</h3>
+              <p>Focuses on deep understanding rather than memorization. Develops analytical thinking, logical reasoning, problem-solving, and practical knowledge.</p>
             </div>
-            <div className={`reveal reveal-delay-3 ${styles.mvCard} ${styles.philosophy}`}>
-              <span className={styles.mvIcon}>📚</span>
-              <h3>Our Philosophy</h3>
-              <p>We believe education is not merely the transfer of knowledge, but the awakening of the mind. Through inquiry-based learning, critical thinking, and compassionate mentorship, we prepare students for life — not just examinations.</p>
+            <div className={`reveal reveal-delay-2 ${styles.pillarCard}`}>
+              <div className={styles.pillarIcon}>👨‍🏫</div>
+              <h3>Experienced & Dedicated Faculty</h3>
+              <p>Qualified educators committed to interactive discussions, activity-based learning, real-life examples, and technology-supported education.</p>
+            </div>
+            <div className={`reveal reveal-delay-3 ${styles.pillarCard}`}>
+              <div className={styles.pillarIcon}>🛡️</div>
+              <h3>Safe & Secure Campus</h3>
+              <p>Comprehensive CCTV monitoring, supervised campus areas, structured discipline policies, and secure entry/exit protocols for complete peace of mind.</p>
             </div>
           </div>
         </div>
