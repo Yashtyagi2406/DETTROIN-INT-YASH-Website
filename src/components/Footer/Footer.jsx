@@ -1,25 +1,28 @@
 import { Link } from 'react-router-dom'
 import {
   FaGraduationCap, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt,
-  FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp,
-  FaHeart
+  FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp
 } from 'react-icons/fa'
 import styles from './Footer.module.css'
 
 const quickLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About Us' },
+  { to: '/academics', label: 'Academics' },
+  { to: '/admissions', label: 'Admissions' },
+  { to: '/facilities', label: 'School Facilities' },
   { to: '/gallery', label: 'Gallery' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/blog', label: 'Blog & News' },
+  { to: '/contact', label: 'Contact Us' },
 ]
 
 const programs = [
-  'Pre-Primary (Nursery–KG)',
-  'Primary School (I–V)',
-  'Middle School (VI–VIII)',
-  'Secondary (IX–X)',
-  'Senior Secondary (XI–XII)',
-  'Co-Curricular Activities',
+  { to: '/academics/pre-primary', label: 'Pre-Primary (Nursery–KG)' },
+  { to: '/academics/primary', label: 'Primary School (I–V)' },
+  { to: '/academics/middle', label: 'Middle School (VI–VIII)' },
+  { to: '/academics/daycare', label: 'Daycare Facility' },
+  { to: '/facilities', label: 'School Facilities' },
+  { to: '/admissions/enquiry', label: 'Admission Enquiry' },
 ]
 
 export default function Footer() {
@@ -51,7 +54,7 @@ export default function Footer() {
                 <a href="https://www.facebook.com/share/1GvbBbZqN5/" target="_blank" rel="noopener noreferrer" id="footer-facebook" aria-label="Facebook"><FaFacebookF /></a>
                 <a href="https://www.instagram.com/excellence_school_aligarh?igsh=a2NudW0zcnlqeTVu" target="_blank" rel="noopener noreferrer" id="footer-instagram" aria-label="Instagram"><FaInstagram /></a>
                 <a href="https://youtube.com/@excellenceschoolinternational?si=cAvfCyy3WWmRWkg6" target="_blank" rel="noopener noreferrer" id="footer-youtube" aria-label="YouTube"><FaYoutube /></a>
-                <a href="https://api.whatsapp.com/send?phone=917055582117" target="_blank" rel="noopener noreferrer" id="footer-twitter" aria-label="WhatsApp"><FaWhatsapp /></a>
+                <a href="https://api.whatsapp.com/send?phone=917055582117" target="_blank" rel="noopener noreferrer" id="footer-whatsapp" aria-label="WhatsApp"><FaWhatsapp /></a>
               </div>
             </div>
 
@@ -71,13 +74,13 @@ export default function Footer() {
 
             {/* Programs */}
             <div>
-              <h4 className={styles.colHeading}>Programs</h4>
+              <h4 className={styles.colHeading}>Academic Programs</h4>
               <ul className={styles.linkList}>
                 {programs.map(p => (
-                  <li key={p}>
-                    <span className={styles.programItem}>
-                      <span className={styles.arrow}>›</span> {p}
-                    </span>
+                  <li key={p.to}>
+                    <Link to={p.to} className={styles.footerLink}>
+                      <span className={styles.arrow}>›</span> {p.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -100,23 +103,18 @@ export default function Footer() {
                   <a href="mailto:info@excellenceinternationalschool.com">info@excellenceinternationalschool.com</a>
                 </li>
               </ul>
-
-              <Link to="/contact" className={`btn btn-primary ${styles.admissionsBtn}`} id="footer-admissions-btn">
-                Admission Enquiry
-              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className={styles.bottomBar}>
         <div className="container">
           <div className={styles.bottomInner}>
-            <span>© {new Date().getFullYear()} Excellence International School. All rights reserved.</span>
-            <span className={styles.madeWith}>
-              Made with <FaHeart className={styles.heart} /> by Yash Tyagi
-            </span>
+            <p>© {new Date().getFullYear()} Excellence International School, Aligarh. All rights reserved.</p>
+            <p className={styles.credit}>
+              Designed with care by Yash Tyagi
+            </p>
           </div>
         </div>
       </div>

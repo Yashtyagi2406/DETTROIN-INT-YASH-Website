@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaPlay, FaArrowRight, FaGraduationCap, FaUsers, FaTrophy, FaStar } from 'react-icons/fa'
+import { FaPlay, FaArrowRight, FaGraduationCap, FaUsers, FaTrophy, FaStar, FaTimes, FaMapMarkerAlt } from 'react-icons/fa'
 import styles from './HeroSection.module.css'
 
 const stats = [
@@ -17,8 +17,18 @@ const typewriterTexts = [
   'Excellence in Education',
 ]
 
+const tourImages = [
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/1.jpg', title: 'Main School Campus & Entry' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Pre-Primary-School.png', title: 'Pre-Primary Play Area & Activity Classrooms' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Primary-School.png', title: 'Smart Interactive Classrooms' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Middle.png', title: 'Science & Computer Technology Labs' },
+  { img: 'https://excellenceinternationalschool.com/wp-content/uploads/2026/03/4.jpg', title: 'Sports Field & Outdoor Activities' }
+]
+
 export default function HeroSection() {
   const typeRef = useRef(null)
+  const [showTour, setShowTour] = useState(false)
+  const [activeTourIndex, setActiveTourIndex] = useState(0)
 
   useEffect(() => {
     let current = 0
@@ -89,7 +99,11 @@ export default function HeroSection() {
             <Link to="/contact" id="hero-apply-btn" className={`btn btn-primary ${styles.btnLg}`}>
               Apply for Admission <FaArrowRight />
             </Link>
-            <button id="hero-tour-btn" className={`btn btn-secondary ${styles.btnLg} ${styles.tourBtn}`}>
+            <button
+              id="hero-tour-btn"
+              className={`btn btn-secondary ${styles.btnLg} ${styles.tourBtn}`}
+              onClick={() => setShowTour(true)}
+            >
               <span className={styles.playIcon}><FaPlay /></span>
               Virtual Tour
             </button>
@@ -157,6 +171,57 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Virtual Tour Modal */}
+      {showTour && (
+        <div className={styles.tourModalOverlay} onClick={() => setShowTour(false)}>
+          <div className={styles.tourModalContent} onClick={e => e.stopPropagation()}>
+            <button className={styles.closeBtn} onClick={() => setShowTour(false)} aria-label="Close modal">
+              <FaTimes />
+            </button>
+
+            <div className={styles.modalHeader}>
+              <h2><FaMapMarkerAlt className={styles.modalIcon} /> Excellence Campus Virtual Tour</h2>
+              <p>Explore our campus facilities, smart classrooms, and sports grounds in Aligarh</p>
+            </div>
+
+            <div className={styles.modalBody}>
+              <div className={styles.tourMainView}>
+                <img
+                  src={tourImages[activeTourIndex].img}
+                  alt={tourImages[activeTourIndex].title}
+                  className={styles.tourMainImg}
+                />
+                <div className={styles.tourImgCaption}>
+                  <span>{activeTourIndex + 1} / {tourImages.length}</span>
+                  <h4>{tourImages[activeTourIndex].title}</h4>
+                </div>
+              </div>
+
+              <div className={styles.tourThumbs}>
+                {tourImages.map((t, idx) => (
+                  <button
+                    key={idx}
+                    className={`${styles.thumbBtn} ${activeTourIndex === idx ? styles.thumbActive : ''}`}
+                    onClick={() => setActiveTourIndex(idx)}
+                  >
+                    <img src={t.img} alt={t.title} />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.modalFooter}>
+              <Link to="/gallery" className="btn btn-outline" onClick={() => setShowTour(false)}>
+                View Full Photo Gallery
+              </Link>
+              <Link to="/contact" className="btn btn-primary" onClick={() => setShowTour(false)}>
+                Book Physical Campus Visit
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
