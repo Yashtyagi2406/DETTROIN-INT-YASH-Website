@@ -21,12 +21,7 @@ const values = [
   { icon: <FaUsers />, title: 'Community', desc: 'Building strong bonds between school, parents, and the wider Aligarh community.', color: '#ec4899' },
 ]
 
-const team = [
-  { name: 'Dr. Rajendra Prasad', role: 'Principal', initials: 'RP', color: '#0D3B2E', exp: '30+ years in education' },
-  { name: 'Mrs. Kavita Singh', role: 'Vice Principal', initials: 'KS', color: '#1A5C45', exp: '22 years teaching' },
-  { name: 'Mr. Suresh Sharma', role: 'Head of Science Dept.', initials: 'SS', color: '#3b82f6', exp: '18 years in CBSE' },
-  { name: 'Mrs. Anita Gupta', role: 'Head of Commerce', initials: 'AG', color: '#8b5cf6', exp: '15 years teaching' },
-]
+
 
 export default function About() {
   const ref = useRef(null)
@@ -159,34 +154,6 @@ export default function About() {
                 </div>
                 <h4>{v.title}</h4>
                 <p>{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className={`section ${styles.teamSection}`}>
-        <div className="container">
-          <div className="text-center reveal" style={{ marginBottom: '3rem' }}>
-            <span className="section-label">Leadership</span>
-            <h2 className="heading-lg">Meet Our <span className={styles.highlight}>Leadership Team</span></h2>
-          </div>
-          <div className={styles.teamGrid}>
-            {team.map((m, i) => (
-              <div
-                key={i}
-                className={`reveal ${styles.teamCard}`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                <div className={styles.memberAvatar} style={{ background: m.color }}>
-                  {m.initials}
-                </div>
-                <h4>{m.name}</h4>
-                <span className={styles.memberRole}>{m.role}</span>
-                <span className={styles.memberExp}>
-                  <FaCheckCircle /> {m.exp}
-                </span>
               </div>
             ))}
           </div>

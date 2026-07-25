@@ -10,23 +10,25 @@ const navItems = [
   { label: 'About Us', to: '/about' },
   {
     label: 'Academics',
+    to: '/academics',
     dropdown: [
-      { label: 'Pre Primary School', href: `${BASE}/best-pre-primary-school-in-aligarh/` },
-      { label: 'Primary School',     href: `${BASE}/best-primary-school-in-aligarh/` },
-      { label: 'Middle School',      href: `${BASE}/best-middle-school-in-aligarh/` },
-      { label: 'Daycare',            href: `${BASE}/best-daycare-school-in-aligarh/` },
+      { label: 'Pre Primary School', to: '/academics/pre-primary' },
+      { label: 'Primary School',     to: '/academics/primary' },
+      { label: 'Middle School',      to: '/academics/middle' },
+      { label: 'Daycare',            to: '/academics/daycare' },
     ],
   },
   {
     label: 'Admissions',
+    to: '/admissions',
     dropdown: [
-      { label: 'Admission Enquiry Form', href: `${BASE}/admission-enquiry-form/` },
-      { label: 'Admission Procedure',    href: `${BASE}/admission-procedure/` },
+      { label: 'Admission Enquiry Form', to: '/admissions/enquiry' },
+      { label: 'Admission Procedure',    to: '/admissions/procedure' },
     ],
   },
-  { label: 'School Facilities', href: `${BASE}/school-facilities/` },
+  { label: 'School Facilities', to: '/facilities' },
   { label: 'Gallery', to: '/gallery' },
-  { label: 'Blog', href: `${BASE}/blog/` },
+  { label: 'Blog', to: '/blog' },
   { label: 'Contact Us', to: '/contact' },
 ]
 
@@ -136,15 +138,14 @@ export default function Navbar() {
                     <ul className={`${styles.dropdown} ${openDropdown === i ? styles.dropdownOpen : ''}`}>
                       {item.dropdown.map((sub, j) => (
                         <li key={j}>
-                          <a
-                            href={sub.href}
+                          <Link
+                            to={sub.to || sub.href || '#'}
                             id={`nav-sub-${sub.label.toLowerCase().replace(/\s+/g, '-')}`}
                             className={styles.dropdownLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            onClick={() => setOpenDropdown(null)}
                           >
                             {sub.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -186,9 +187,13 @@ export default function Navbar() {
                       <ul className={styles.mobileSub}>
                         {item.dropdown.map((sub, j) => (
                           <li key={j}>
-                            <a href={sub.href} className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer">
+                            <Link
+                              to={sub.to || sub.href || '#'}
+                              className={styles.mobileSubLink}
+                              onClick={() => setMenuOpen(false)}
+                            >
                               {sub.label}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>

@@ -1,0 +1,234 @@
+.academicsPage {
+  min-height: 100vh;
+}
+
+.pageHero {
+  position: relative;
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(7,31,25,0.85) 0%, rgba(13,59,46,0.7) 100%),
+    url('https://excellenceinternationalschool.com/wp-content/uploads/2026/03/Home-Banner-1.png') center/cover no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 70% 50%, rgba(245,166,35,0.1) 0%, transparent 60%);
+}
+
+.heroBreadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+.heroBreadcrumb a { color: var(--accent-light); text-decoration: none; }
+.heroBreadcrumb a:hover { color: var(--white); }
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.heroSub {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 650px;
+}
+
+.contentSection {
+  background: #f8faf9;
+  padding: 4rem 0;
+}
+
+.tabsNav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--white);
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.tabBtn:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.activeTab {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px rgba(13,59,46,0.2);
+}
+
+.tabIcon {
+  font-size: 1.8rem;
+  color: var(--accent-dark);
+}
+
+.activeTab .tabIcon {
+  color: var(--accent);
+}
+
+.tabText strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+.activeTab .tabText strong {
+  color: var(--white);
+}
+
+.tabText small {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.activeTab .tabText small {
+  color: rgba(255,255,255,0.7);
+}
+
+.stageCard {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.stageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.stageBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245,166,35,0.15);
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1rem;
+}
+
+.stageText h2 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.subtitleText {
+  color: var(--accent-dark);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.overviewText {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.highlightTitle {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.highlightsList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.checkIcon {
+  color: #10b981;
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.ctaBox {
+  display: flex;
+  gap: 1rem;
+}
+
+.stageImageWrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.stageImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.stageImageWrapper:hover .stageImg {
+  transform: scale(1.03);
+}
+
+@media (max-width: 1024px) {
+  .tabsNav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stageGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .tabsNav {
+    grid-template-columns: 1fr;
+  }
+  .stageCard {
+    padding: 1.5rem;
+  }
+  .ctaBox {
+    flex-direction: column;
+  }
+}
