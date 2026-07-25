@@ -1,10 +1,10 @@
 .tickerWrapper {
-  background: linear-gradient(90deg, #071f19 0%, #0d3b2e 50%, #071f19 100%);
+  background: linear-gradient(90deg, #060f1e 0%, #0b1a30 50%, #060f1e 100%);
   color: var(--accent);
   overflow: hidden;
   padding: 0.85rem 0;
-  border-top: 1px solid rgba(245, 166, 35, 0.25);
-  border-bottom: 1px solid rgba(245, 166, 35, 0.25);
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   position: relative;
   z-index: 10;

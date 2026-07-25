@@ -13,22 +13,22 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--primary);
-  color: var(--accent);
-  border: 2px solid var(--accent);
+  background: #0b1a30;
+  color: #d4af37;
+  border: 2px solid #d4af37;
   font-size: 1.35rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(13,59,46,0.4);
+  box-shadow: 0 8px 25px rgba(11,26,48,0.4);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .dockToggleBtn:hover {
   transform: scale(1.1);
-  background: #071f19;
-  box-shadow: 0 12px 30px rgba(13,59,46,0.6);
+  background: #060f1e;
+  box-shadow: 0 12px 30px rgba(11,26,48,0.6);
 }
 
 .dockToggleBtn.active {

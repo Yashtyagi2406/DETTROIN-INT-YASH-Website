@@ -9,8 +9,9 @@
 
 /* ─── Top Info Bar ────────────────────────────────────────────────── */
 .topBar {
-  background: var(--accent);
+  background: #060f1e;
   padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .topBarInner {
@@ -19,7 +20,7 @@
   gap: 2rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--primary-dark);
+  color: #e2e8f0;
   flex-wrap: wrap;
 }
 
@@ -27,19 +28,21 @@
   vertical-align: middle;
   margin-right: 0.3rem;
   font-size: 0.75rem;
+  color: var(--accent);
 }
 
 /* ─── Main Navbar ─────────────────────────────────────────────────── */
 .navbar {
-  background: var(--primary);
+  background: #0b1a30;
   backdrop-filter: blur(12px);
   transition: background 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .navbar.scrolled {
-  background: rgba(7, 31, 25, 0.97);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+  background: rgba(11, 26, 48, 0.98);
+  box-shadow: 0 6px 32px rgba(5, 11, 20, 0.4);
 }
 
 /* Scroll Progress Bar */

@@ -4,23 +4,23 @@
 
 /* --- CSS Variables --- */
 :root {
-  /* Colors */
-  --primary: #0D3B2E;
-  --primary-light: #1A5C45;
-  --primary-dark: #071f19;
-  --accent: #F5A623;
-  --accent-light: #FFD166;
-  --accent-dark: #d4881a;
-  --dark: #0A0F0D;
-  --text: #1e293b;
-  --text-muted: #64748b;
-  --light: #F8FAF9;
+  /* Colors — Royal Navy & Metallic Gold Palette */
+  --primary: #0b1a30;
+  --primary-light: #173b6c;
+  --primary-dark: #060f1e;
+  --accent: #d4af37;
+  --accent-light: #f5d77f;
+  --accent-dark: #aa7c11;
+  --dark: #050b14;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --light: #f1f5f9;
   --white: #ffffff;
-  --glass: rgba(255, 255, 255, 0.07);
-  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(212, 175, 55, 0.25);
   --card-bg: #ffffff;
-  --card-shadow: 0 4px 24px rgba(13, 59, 46, 0.10);
-  --card-shadow-hover: 0 16px 48px rgba(13, 59, 46, 0.18);
+  --card-shadow: 0 8px 30px rgba(11, 26, 48, 0.08);
+  --card-shadow-hover: 0 16px 45px rgba(11, 26, 48, 0.16);
 
   /* Typography */
   --font-heading: 'Playfair Display', serif;
@@ -181,14 +181,15 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
   color: var(--white);
-  box-shadow: 0 4px 20px rgba(245, 166, 35, 0.4);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(245, 166, 35, 0.55);
+  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.65);
+  background: linear-gradient(135deg, #f5d77f 0%, #d4af37 100%);
 }
 
 .btn-secondary {

@@ -1,8 +1,9 @@
 .footer {
-  background: var(--primary-dark);
+  background: #060f1e;
   color: rgba(255,255,255,0.75);
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .wave {
@@ -19,7 +20,7 @@
 
 .footerBody {
   padding: 3rem 0;
-  background: var(--primary-dark);
+  background: #060f1e;
 }
 
 .grid {

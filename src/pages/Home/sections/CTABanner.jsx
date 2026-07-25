@@ -6,7 +6,7 @@ export default function CTABanner() {
   return (
     <section className={styles.cta} id="cta-banner">
       <div className={styles.bg} />
-      <div className="container">
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className={styles.inner}>
           <div className={styles.textCol}>
             <h2 className={styles.heading}>
@@ -22,7 +22,7 @@ export default function CTABanner() {
               Apply Now <FaArrowRight />
             </Link>
             <a
-              href="https://wa.me/915711234567"
+              href="https://wa.me/917055582117"
               target="_blank"
               rel="noopener noreferrer"
               id="cta-whatsapp-btn"

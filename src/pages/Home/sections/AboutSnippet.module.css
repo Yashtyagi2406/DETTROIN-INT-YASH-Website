@@ -51,15 +51,16 @@
   letter-spacing: 0.05em;
   z-index: 2;
   padding: 0.35rem 0.75rem;
-  background: rgba(7, 31, 25, 0.85);
+  background: rgba(11, 26, 48, 0.88);
   backdrop-filter: blur(4px);
   border-radius: var(--radius-pill);
-  color: var(--accent);
+  color: #d4af37;
+  border: 1px solid rgba(212, 175, 55, 0.4);
   margin: 0;
 }
 
 .mc1, .mc2, .mc3, .mc4 {
-  background: var(--primary-dark);
+  background: #060f1e;
 }
 
 .yearBadge {
