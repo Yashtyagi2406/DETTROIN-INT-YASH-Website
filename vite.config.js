@@ -5,24 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Code splitting for better caching
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // Split vendor libraries into their own chunk
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          icons: ['react-icons'],
-          motion: ['framer-motion'],
-        },
-      },
-    },
-    // Minify CSS
+    // CSS minification
     cssMinify: true,
-    // Generate source maps only in dev
-    sourcemap: false,
-    // Set chunk size warning limit
+    // Suppress large chunk warnings
     chunkSizeWarningLimit: 600,
+    // Disable source maps for production
+    sourcemap: false,
   },
-  // Enable asset optimization
-  assetsInclude: ['**/*.webp', '**/*.avif'],
 })
