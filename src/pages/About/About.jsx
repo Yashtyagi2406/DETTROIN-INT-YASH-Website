@@ -115,23 +115,23 @@ export default function About() {
             <span className="section-label">Our Journey</span>
             <h2 className="heading-lg">Two Decades of <span className={styles.highlight}>Growth & Excellence</span></h2>
           </div>
-          <div className={styles.timeline}>
-            {timeline.map((item, i) => (
-              <div
-                key={i}
-                className={`reveal ${styles.timelineItem} ${i % 2 === 0 ? styles.left : styles.right}`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                <div className={styles.timelineContent}>
-                  <div className={styles.timelineYear}>{item.year}</div>
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
+            <div className={styles.timeline}>
+              {timeline.map((item, i) => (
+                <div
+                  key={i}
+                  className={`reveal ${styles.timelineItem}`}
+                  style={{ transitionDelay: `${i * 0.1}s` }}
+                >
+                  <div className={styles.timelineDot} />
+                  <div className={styles.timelineContent}>
+                    <div className={styles.timelineYear}>{item.year}</div>
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                  </div>
                 </div>
-                <div className={styles.timelineDot} />
-              </div>
-            ))}
-            <div className={styles.timelineLine} />
-          </div>
+              ))}
+              <div className={styles.timelineLine} />
+            </div>
         </div>
       </section>
 
