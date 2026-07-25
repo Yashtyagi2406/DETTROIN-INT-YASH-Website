@@ -1,9 +1,10 @@
 import HeroSection from './sections/HeroSection'
 import AboutSnippet from './sections/AboutSnippet'
-import ProgramsSection from './sections/ProgramsSection'
+import AcademicStages from './sections/AcademicStages'
 import WhyChooseUs from './sections/WhyChooseUs'
 import StatsSection from './sections/StatsSection'
 import Testimonials from './sections/Testimonials'
+import FAQSection from './sections/FAQSection'
 import CTABanner from './sections/CTABanner'
 
 export default function Home() {
@@ -11,10 +12,11 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSnippet />
-      <ProgramsSection />
+      <AcademicStages />
       <WhyChooseUs />
       <StatsSection />
       <Testimonials />
+      <FAQSection />
       <CTABanner />
     </>
   )
