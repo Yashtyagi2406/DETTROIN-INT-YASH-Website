@@ -15,60 +15,52 @@
 .mosaic {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
   position: relative;
 }
 
 .mosaicCard {
-  background: var(--white);
+  position: relative;
+  height: 190px;
   border-radius: var(--radius-lg);
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  box-shadow: var(--card-shadow);
-  text-align: center;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: default;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
-  transform: translateZ(0);
 }
 
 .mosaicCard:hover {
-  transform: translateY(-4px) translateZ(0);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
 }
 
 .mosaicImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: inherit;
+  display: block;
 }
 
 .mosaicCard p {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  position: relative;
-  z-index: 1;
-  padding: 0.3rem 0.6rem;
-  background: rgba(0,0,0,0.55);
-  border-radius: 4px;
-  color: white;
-  margin-top: auto;
+  z-index: 2;
+  padding: 0.35rem 0.75rem;
+  background: rgba(7, 31, 25, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-pill);
+  color: var(--accent);
+  margin: 0;
 }
 
-.mc1 { background: var(--primary-dark); }
-.mc2 { background: #1a3d2e; }
-.mc3 { background: #143326; }
-.mc4 { grid-column: 1 / -1; background: #0d2b1f; flex-direction: row; gap: 1rem; padding: 0; }
+.mc1, .mc2, .mc3, .mc4 {
+  background: var(--primary-dark);
+}
 
 .yearBadge {
   position: absolute;
