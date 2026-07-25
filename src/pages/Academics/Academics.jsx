@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FaGraduationCap, FaBookReader, FaChild, FaBaby, FaCheckCircle, FaAward } from 'react-icons/fa'
 import styles from './Academics.module.css'
@@ -68,17 +68,23 @@ const academicStages = [
 
 export default function Academics() {
   const location = useLocation()
-  
-  // Set default active tab based on pathname if specific subroute hit
+
   const getInitialTab = () => {
-    if (location.pathname.includes('pre-primary')) return 'pre-primary'
-    if (location.pathname.includes('primary')) return 'primary'
-    if (location.pathname.includes('middle')) return 'middle'
     if (location.pathname.includes('daycare')) return 'daycare'
+    if (location.pathname.includes('middle')) return 'middle'
+    if (location.pathname.includes('primary') && !location.pathname.includes('pre-primary')) return 'primary'
+    if (location.pathname.includes('pre-primary')) return 'pre-primary'
     return 'pre-primary'
   }
 
-  const [activeTab, setActiveTab] = useState(getInitialTab())
+  const [activeTab, setActiveTab] = useState(getInitialTab)
+
+  useEffect(() => {
+    if (location.pathname.includes('daycare')) setActiveTab('daycare')
+    else if (location.pathname.includes('middle')) setActiveTab('middle')
+    else if (location.pathname.includes('primary') && !location.pathname.includes('pre-primary')) setActiveTab('primary')
+    else if (location.pathname.includes('pre-primary')) setActiveTab('pre-primary')
+  }, [location.pathname])
 
   const currentStage = academicStages.find(s => s.id === activeTab) || academicStages[0]
 
