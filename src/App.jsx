@@ -10,6 +10,7 @@ import Gallery from './pages/Gallery/Gallery'
 import Blog from './pages/Blog/Blog'
 import Contact from './pages/Contact/Contact'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton'
 import './App.css'
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <WhatsAppButton />
       <Footer />
     </Router>
   )
