@@ -90,16 +90,21 @@ export default function Academics() {
 
   return (
     <div className={styles.academicsPage}>
-      {/* Page Hero */}
-      <section className={styles.pageHero}>
+      {/* Page Hero — Dynamic Background matching original site for each stage */}
+      <section
+        className={styles.pageHero}
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(7,31,25,0.85) 0%, rgba(13,59,46,0.68) 100%), url("${currentStage.img}")`
+        }}
+      >
         <div className={styles.heroOverlay} />
         <div className="container">
           <div className={styles.heroBreadcrumb}>
-            <Link to="/">Home</Link> <span>/</span> <span>Academics</span>
+            <Link to="/">Home</Link> <span>/</span> <Link to="/academics">Academics</Link> <span>/</span> <span>{currentStage.title}</span>
           </div>
-          <h1 className={styles.heroTitle}>Academic Programs & Stages</h1>
+          <h1 className={styles.heroTitle}>{currentStage.title}</h1>
           <p className={styles.heroSub}>
-            Empowering students with a robust CBSE curriculum, holistic development, and world-class learning infrastructure.
+            {currentStage.overview}
           </p>
         </div>
       </section>
