@@ -96,7 +96,7 @@ export default function Footer() {
               <ul className={styles.contactList}>
                 <li>
                   <FaMapMarkerAlt className={styles.contactIcon} />
-                  <span>Ramghat Road, Aligarh, Uttar Pradesh — 202001</span>
+                  <span>Excellence International School, Ramghat Road, Aligarh 202001, Uttar Pradesh</span>
                 </li>
                 <li>
                   <FaPhoneAlt className={styles.contactIcon} />

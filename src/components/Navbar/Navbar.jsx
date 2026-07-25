@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="container">
           <div className={styles.topBarInner}>
             <span><FaPhoneAlt /> +91 7055582117</span>
-            <span>📍 Ramghat Road, Aligarh, Uttar Pradesh</span>
+            <span>📍 Excellence International School, Ramghat Road, Aligarh 202001, Uttar Pradesh</span>
             <span>🕒 Mon–Sat: 8:00 AM – 4:00 PM</span>
           </div>
         </div>

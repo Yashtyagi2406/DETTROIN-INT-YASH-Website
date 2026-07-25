@@ -11,7 +11,7 @@ const contactInfo = [
   {
     icon: <FaMapMarkerAlt />,
     title: 'Our Address',
-    lines: ['Ramghat Road, Aligarh', 'Uttar Pradesh — 202001'],
+    lines: ['Excellence International School', 'Ramghat Road, Aligarh 202001', 'Uttar Pradesh, India'],
     color: '#0D3B2E',
   },
   {
